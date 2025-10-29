@@ -5,8 +5,7 @@
     { "src": "**/*.{css,js,png,jpg,jpeg,gif,svg,ico,webp}", "use": "@vercel/static" }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "/$1" },
-    { "src": "/", "dest": "/index.html" },
-    { "src": "/(.*)", "status": 200, "dest": "/index.html" }
+    { "src": "/", "dest": "/home.html" },
+    { "src": "/(.*)", "dest": "/$1" }
   ]
 }
