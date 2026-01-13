@@ -7,11 +7,9 @@ export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { name: 'Home', href: '/' },
-    { name: 'About Us', href: '/about' },
+    { name: 'About', href: '#about' },
     { name: 'Gallery', href: '/gallery' },
-    { name: 'Book An Event', href: '/book-event' },
-    { name: 'Contact Us', href: '/contact' },
+    { name: 'Contact', href: '#contact' },
   ];
 
   return (
@@ -28,13 +26,23 @@ export default function Navigation() {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="text-white hover:text-gray-300 px-3 py-2 text-sm font-medium transition-colors"
-                >
-                  {item.name}
-                </Link>
+                item.href.startsWith('#') ? (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="text-white hover:text-gray-300 px-3 py-2 text-sm font-medium transition-colors"
+                  >
+                    {item.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className="text-white hover:text-gray-300 px-3 py-2 text-sm font-medium transition-colors"
+                  >
+                    {item.name}
+                  </Link>
+                )
               ))}
             </div>
           </div>
@@ -57,14 +65,25 @@ export default function Navigation() {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="text-white hover:text-gray-300 block px-3 py-2 text-base font-medium"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
+                item.href.startsWith('#') ? (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="text-white hover:text-gray-300 block px-3 py-2 text-base font-medium"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className="text-white hover:text-gray-300 block px-3 py-2 text-base font-medium"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                )
               ))}
             </div>
           </div>

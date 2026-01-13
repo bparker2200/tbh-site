@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Tommy's Beverly Hills",
-  description: "Fine dining restaurant in Beverly Hills, California",
+  description: "A private event venue with French elegance in Beverly Hills",
 };
 
 export default function RootLayout({

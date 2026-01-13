@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:tommys-beverly-hills.vercel.app)",
+      "WebFetch(domain:localhost)",
+      "Bash(curl:*)",
+      "WebFetch(domain:www.tommysbh.com)",
+      "Bash(npm run dev:*)"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "local-dev-mcp"
+  ]
+}
